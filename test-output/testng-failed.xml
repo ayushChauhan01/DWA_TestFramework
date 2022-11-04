@@ -4,15 +4,16 @@
   <listeners>
     <listener class-name="com.DWA.listeners.ITestListenerClass"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test1(failed)">
     <classes>
       <class name="com.DWA.testcases.TC_01_LoginTest">
         <methods>
+          <include name="loginWithInvalidUserId"/>
           <include name="setUp"/>
-          <include name="login"/>
+          <include name="loginWithInvalidPassword"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.DWA.testcases.TC_01_LoginTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

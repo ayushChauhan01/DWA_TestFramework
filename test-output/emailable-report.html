@@ -9,13 +9,26 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">26,498</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test1</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">7,526</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.DWA.testcases.TC_01_LoginTest</td><td><a href="#m0">login</a></td><td rowspan="1">1667488902332</td><td rowspan="1">7344</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.DWA.testcases.TC_01_LoginTest</td><td><a href="#m0">loginWithInvalidPassword</a></td><td rowspan="1">1667545254404</td><td rowspan="1">164</td></tr><tr class="failedeven"><td><a href="#m1">loginWithInvalidUserId</a></td><td rowspan="1">1667545254829</td><td rowspan="1">42</td></tr><tr><th colspan="4">Test1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.DWA.testcases.TC_01_LoginTest</td><td><a href="#m2">loginWithValidCredentials</a></td><td rowspan="1">1667545255121</td><td rowspan="1">1677</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com.DWA.testcases.TC_01_LoginTest#login</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: https://democonsole.dwacommerce.com/catalog/control/main expected:&lt;https://democonsole.dwacommerce.com/catalog/control/main&gt; but was:&lt;Url is mismatched&gt;
-	at com.DWA.testcases.TC_01_LoginTest.login(TC_01_LoginTest.java:28)
+<h2>Test1</h2><h3 id="m0">com.DWA.testcases.TC_01_LoginTest#loginWithInvalidPassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:98)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.sendKeys(Unknown Source)
+	at com.DWA.pageObjects.LoginPage.enterPassword(LoginPage.java:33)
+	at com.DWA.testcases.TC_01_LoginTest.loginWithInvalidPassword(TC_01_LoginTest.java:35)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.DWA.testcases.TC_01_LoginTest#loginWithInvalidUserId</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:98)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.sendKeys(Unknown Source)
+	at com.DWA.pageObjects.LoginPage.enterUserId(LoginPage.java:28)
+	at com.DWA.testcases.TC_01_LoginTest.loginWithInvalidUserId(TC_01_LoginTest.java:52)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.DWA.testcases.TC_01_LoginTest#loginWithValidCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

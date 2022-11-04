@@ -3,8 +3,6 @@ package com.DWA.base;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -26,7 +24,6 @@ public class BaseClass extends ReadConfig {
 
 	public static WebDriver driver;
 	public static Logger logger;
-	public static String screenshotsSubFolderName;
 
 	@BeforeTest
 	public void setUp() {
@@ -53,31 +50,34 @@ public class BaseClass extends ReadConfig {
 		logger = LogManager.getLogger("DWA_Test");
 		logger.info("webiste launced");
 	}
-
-	public void captureScreenshot(String fileName) {
-		// File
-		if(screenshotsSubFolderName == null) {
-			LocalDateTime myDateObj = LocalDateTime.now();
-		    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
-		    screenshotsSubFolderName = myDateObj.format(myFormatObj);
-		}
-		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		File destFile = new File("./Screenshots/"+ screenshotsSubFolderName+"/"+fileName);
-		try {
-			FileUtils.copyFile(sourceFile, destFile);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		System.out.println("Screenshot saved successfully");
-	}
-	
+	/*
+	 * @AfterMethod public void screenshotCapture(ITestResult result) {
+	 * if(result.getStatus() == ITestResult.FAILURE) {
+	 * captureScreenshot(result.getTestContext().getName()+ "_"
+	 * +result.getMethod().getMethodName()+".jpg"); } }
+	 */
 
 	@AfterTest
 	public void tearDown() {
 		logger.info("< Successfully exited >");
 		driver.close();
 		driver.quit();
+	}
+
+	public String takeScreenshot(String testName) {
+
+		File sourceScreenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File destinationScreenshotFile = new File(
+				System.getProperty("user.dir") + "\\Screenshots\\" + testName + ".png");
+		try {
+			FileUtils.copyFile(sourceScreenshotFile, destinationScreenshotFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return destinationScreenshotFile.getAbsolutePath();
+
 	}
 
 }
