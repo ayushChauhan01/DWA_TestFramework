@@ -64,8 +64,16 @@ public class TC_01_LoginTest extends BaseClass {
 		Assert.assertEquals(actualUrl, expectedUrl);
 
 	}
-
+	@Test
 	public void loginWithoutCredentials() {
+		LoginPage lg = new LoginPage(driver);
+		lg.loginClick();
+		logger.info("LoggedIn successfully.");
+
+		// assertionOne
+		String actualUrl = driver.getCurrentUrl();
+		String expectedUrl = "https://democonsole.dwacommerce.com/catalog/control/main";
+		Assert.assertEquals(actualUrl, expectedUrl);
 
 	}
 

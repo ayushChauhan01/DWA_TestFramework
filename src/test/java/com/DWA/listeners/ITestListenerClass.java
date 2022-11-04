@@ -1,9 +1,11 @@
 package com.DWA.listeners;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.DWA.base.BaseClass;
 import com.DWA.utilities.ExtentManager;
 import com.aventstack.extentreports.ExtentReports;
@@ -61,6 +63,13 @@ public class ITestListenerClass extends BaseClass implements ITestListener {
 	@Override
 	public void onFinish(ITestContext context) {
 		report.flush();
+		File eReportFile = new File(System.getProperty("user.dir")+"/test-output/ExtentReport/"+"MyReport.html");
+		try {
+			Desktop.getDesktop().browse(eReportFile.toURI());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
