@@ -9,9 +9,9 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test1</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">7,526</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test1</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">36,073</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.DWA.testcases.TC_01_LoginTest</td><td><a href="#m0">loginWithInvalidPassword</a></td><td rowspan="1">1667545254404</td><td rowspan="1">164</td></tr><tr class="failedeven"><td><a href="#m1">loginWithInvalidUserId</a></td><td rowspan="1">1667545254829</td><td rowspan="1">42</td></tr><tr><th colspan="4">Test1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.DWA.testcases.TC_01_LoginTest</td><td><a href="#m2">loginWithValidCredentials</a></td><td rowspan="1">1667545255121</td><td rowspan="1">1677</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">com.DWA.testcases.TC_01_LoginTest</td><td><a href="#m0">loginWithInvalidPassword</a></td><td rowspan="1">1667549826155</td><td rowspan="1">151</td></tr><tr class="failedeven"><td><a href="#m1">loginWithInvalidUserId</a></td><td rowspan="1">1667549830929</td><td rowspan="1">53</td></tr><tr class="failedeven"><td><a href="#m2">loginWithoutCredentials</a></td><td rowspan="1">1667549852286</td><td rowspan="1">370</td></tr><tr><th colspan="4">Test1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.DWA.testcases.TC_01_LoginTest</td><td><a href="#m3">loginWithValidCredentials</a></td><td rowspan="1">1667549822663</td><td rowspan="1">1581</td></tr></tbody>
 </table>
 <h2>Test1</h2><h3 id="m0">com.DWA.testcases.TC_01_LoginTest#loginWithInvalidPassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
 	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:98)
@@ -29,6 +29,10 @@
 	at com.DWA.testcases.TC_01_LoginTest.loginWithInvalidUserId(TC_01_LoginTest.java:52)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.DWA.testcases.TC_01_LoginTest#loginWithValidCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.DWA.testcases.TC_01_LoginTest#loginWithoutCredentials</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [https://democonsole.dwacommerce.com/catalog/control/main] but found [https://democonsole.dwacommerce.com/catalog/control/login]
+	at com.DWA.testcases.TC_01_LoginTest.loginWithoutCredentials(TC_01_LoginTest.java:78)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.DWA.testcases.TC_01_LoginTest#loginWithValidCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

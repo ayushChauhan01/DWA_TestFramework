@@ -13,8 +13,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import com.DWA.utilities.ReadConfig;
 
@@ -25,7 +25,7 @@ public class BaseClass extends ReadConfig {
 	public static WebDriver driver;
 	public static Logger logger;
 
-	@BeforeTest
+	@BeforeMethod
 	public void setUp() {
 
 		ReadConfig.InitializeConfigFile();
@@ -57,7 +57,7 @@ public class BaseClass extends ReadConfig {
 	 * +result.getMethod().getMethodName()+".jpg"); } }
 	 */
 
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
 		logger.info("< Successfully exited >");
 		driver.close();

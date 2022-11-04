@@ -3,9 +3,11 @@ package com.DWA.listeners;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
 import com.DWA.base.BaseClass;
 import com.DWA.utilities.ExtentManager;
 import com.aventstack.extentreports.ExtentReports;
@@ -50,6 +52,12 @@ public class ITestListenerClass extends BaseClass implements ITestListener {
 			e.printStackTrace();
 		}
 */
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		etest.addScreenCaptureFromPath(takeScreenshot(testName), testName);
 		etest.log(Status.FAIL, result.getThrowable());
 	}

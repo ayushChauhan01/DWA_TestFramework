@@ -9,7 +9,7 @@ import com.DWA.pageObjects.LoginPage;
 import com.DWA.utilities.ReadConfig;
 
 public class TC_01_LoginTest extends BaseClass {
-	@Test
+	@Test(priority = 1)
 	public void loginWithValidCredentials() {
 		LoginPage lg = new LoginPage(driver);
 		lg.enterUserId(ReadConfig.property.getProperty("userId"));
@@ -27,7 +27,7 @@ public class TC_01_LoginTest extends BaseClass {
 		Assert.assertEquals(actualUrl, expectedUrl);
 	}
 
-	@Test
+	@Test(priority = 2)
 	public void loginWithInvalidPassword() {
 		LoginPage lg = new LoginPage(driver);
 		lg.enterUserId(ReadConfig.property.getProperty("userId"));
@@ -46,7 +46,7 @@ public class TC_01_LoginTest extends BaseClass {
 
 	}
 
-	@Test
+	@Test(priority = 3)
 	public void loginWithInvalidUserId() {
 		LoginPage lg = new LoginPage(driver);
 		lg.enterUserId(ReadConfig.property.getProperty("userId" +"hjkkhkj"));
@@ -64,7 +64,7 @@ public class TC_01_LoginTest extends BaseClass {
 		Assert.assertEquals(actualUrl, expectedUrl);
 
 	}
-	@Test
+	@Test(priority = 4)
 	public void loginWithoutCredentials() {
 		LoginPage lg = new LoginPage(driver);
 		lg.loginClick();
@@ -72,7 +72,9 @@ public class TC_01_LoginTest extends BaseClass {
 
 		// assertionOne
 		String actualUrl = driver.getCurrentUrl();
+		System.out.println(actualUrl);
 		String expectedUrl = "https://democonsole.dwacommerce.com/catalog/control/main";
+		System.out.println(expectedUrl);
 		Assert.assertEquals(actualUrl, expectedUrl);
 
 	}

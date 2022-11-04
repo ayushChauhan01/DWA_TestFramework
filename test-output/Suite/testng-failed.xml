@@ -9,6 +9,7 @@
       <class name="com.DWA.testcases.TC_01_LoginTest">
         <methods>
           <include name="loginWithInvalidUserId"/>
+          <include name="loginWithoutCredentials"/>
           <include name="setUp"/>
           <include name="loginWithInvalidPassword"/>
           <include name="tearDown"/>
